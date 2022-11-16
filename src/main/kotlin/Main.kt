@@ -62,7 +62,7 @@ fun newGame(){
                 rowArray[j] = 0;
             }
             else{
-                rowArray[j] = 100;
+                rowArray[j] = 9;
             }
 
         }
@@ -79,7 +79,7 @@ fun newGame(){
 
 
             for (j in 0..gameBoard.size - 1) {
-                if (row1[j] == 100) {
+                if (row1[j] >= 9) {
                     if (j == 0) {
                         row1[j + 1]++
                         row2[j]++
@@ -107,7 +107,7 @@ fun newGame(){
             row1 = gameBoard.get(i)
 
             for (j in 0..gameBoard.size - 1) {
-                if (row1[j] == 100) {
+                if (row1[j] >= 9) {
                     if (j == 0) {
                         row1[j + 1]++
                         row0[j]++
@@ -136,7 +136,7 @@ fun newGame(){
             row2 = gameBoard.get(i+1)
 
             for (j in 0..gameBoard.size - 1) {
-                if (row1[j] == 100) {
+                if (row1[j] >=9) {
                     if (j == 0) {
                         row1[j + 1]++
                         row0[j]++
@@ -172,8 +172,8 @@ fun newGame(){
     for (i in 0..gameBoard.size - 1) {
         val rowArray = gameBoard.get(i)
         for (j in 0..gameBoard.size - 1) {
-            if(rowArray[j]>= 100) {
-                rowArray[j] = 100;
+            if(rowArray[j]>= 9) {
+                rowArray[j] = 9;
             }
         }
         gameBoard[i] = rowArray;
