@@ -3,10 +3,11 @@ import java.util.Scanner
 
 public fun array2dOfBoolean(sizeOuter: Int, sizeInner: Int): Array<BooleanArray> = Array(sizeOuter) { BooleanArray(sizeInner)}
 public fun array2dOfInt(sizeOuter: Int, sizeInner: Int): Array<IntArray> = Array(sizeOuter) { IntArray(sizeInner) }
-fun newGame(){
 
-    var boardBool = array2dOfBoolean(10,10 );
-    var gameBoard = array2dOfInt(10, 10);
+var gameBoard = array2dOfInt(10, 10);
+var boardBool = array2dOfBoolean(10,10 );
+
+fun newGame(bombs: Int){
 
     for(i in 0..boardBool.size - 1) {
         var rowArray = BooleanArray(10)
@@ -22,7 +23,7 @@ fun newGame(){
 
     var list = mutableListOf(r);
 
-    while(x < 10){
+    while(x < bombs){
         var spot = 0;
         if(x == 0){
             for (i in 0..boardBool.size - 1) {
@@ -187,6 +188,16 @@ fun newGame(){
         println("")
     }
 }
+fun boardGet(x : Int, y : Int){
+    for(row in gameBoard) {
+        for(j in row) {
+            print(j)
+            print(" ")
+        }
+        println("")
+    }
+
+}
 
 
 fun main(args: Array<String>) {
@@ -198,7 +209,7 @@ fun main(args: Array<String>) {
     println("You entered: $input")
 // prints new sequence every time
 
-    newGame();
+    newGame(10);
 
     // Try adding program arguments via Run/Debug configuration.
     // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
